@@ -7,6 +7,8 @@
 #' cause an error; otherwise they do not.  Like \code{na.rm} in many
 #' stats package functions, except that the position of the failing
 #' values does not change.
+#' @param severity How severe should the consequences of the assertion be?  
+#' Either \code{"stop"}, \code{"warning"}, \code{"message"}, or \code{"none"}.
 #' @return \code{is_us_telephone_number} returns \code{TRUE} if the input string
 #' contains a valid US telephone number. The {assert_*} functions return nothing 
 #' but throw an error when the \code{is_*} function returns \code{FALSE}. 
@@ -94,6 +96,8 @@ is_us_telephone_number <- function(x)
 #' cause an error; otherwise they do not.  Like \code{na.rm} in many
 #' stats package functions, except that the position of the failing
 #' values does not change.
+#' @param severity How severe should the consequences of the assertion be?  
+#' Either \code{"stop"}, \code{"warning"}, \code{"message"}, or \code{"none"}.
 #' @return \code{is_us_zip_code} returns \code{TRUE} if the input string 
 #' contains a valid US zip code. The {assert_*} functions return nothing but 
 #' throw an error when the \code{is_*} function returns \code{FALSE}.
