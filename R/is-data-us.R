@@ -1,3 +1,41 @@
+#' Is the string a valid US SSN?
+#' 
+#' Checks that the input contains US Social Security Number.
+#' 
+#' @param x Input to check.
+#' @param na_ignore A logical value.  If \code{FALSE}, \code{NA} values
+#' cause an error; otherwise they do not.  Like \code{na.rm} in many
+#' stats package functions, except that the position of the failing
+#' values does not change.
+#' @param severity How severe should the consequences of the assertion be?  
+#' Either \code{"stop"}, \code{"warning"}, \code{"message"}, or \code{"none"}.
+#' @return \code{is_us_social_security_number} returns \code{TRUE} if the input 
+#' string contains a valid US Social Security Number. The {assert_*} functions 
+#' return nothing but throw an error when the \code{is_*} function returns 
+#' \code{FALSE}.
+#' @note A valid SSN is considered to be 3 digits, then 2 digits then 4 digits
+#' possibly separated by a hyphen or space.  The first block cannot be 666 or a
+#' begin with a nine, and no block can contain all zeroes.  The function 
+#' doesn't guarantee that the SSN actually exists.
+#' @examples
+#' ssns <- c("123-45-6789", "666-45-6789", "123-00-6789")
+#' is_us_social_security_number(ssns)
+#' @export
+is_us_social_security_number <- function(x)
+{
+  # three numbers, not 000 or 666 or >=900
+  first <- "(?:00[1-9]|0[0-9]{2}|66[0-57-9]|6[0-57-9][0-9]|[1-578][0-9]{2})"
+  # two numbers, not 00
+  second <- "(?:0[1-9]|[1-9][0-9])"
+  # four numbers, not 0000
+  third <- "(?:000[1-9]|00[1-9][0-9]|0[1-9][0-9]{2}|[1-9][0-9]{3})"
+  
+  rx <- assertive.strings:::create_regex(c(first, second, third))
+  
+  ok <- assertive.strings:::matches_regex(x, rx)
+  assertive.base::set_cause(ok, "bad format")
+}
+
 #' Is the string a valid US telephone number?
 #' 
 #' Checks that the input contains US/Canadian (NANPA) telephone numbers.
