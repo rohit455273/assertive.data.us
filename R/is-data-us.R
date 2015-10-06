@@ -42,6 +42,7 @@
 #' @export
 is_us_telephone_number <- function(x)
 { 
+  x <- coerce_to(x, "character", get_name_in_parent(x))
   # Spaces and round brackets appear in arbitrary places; ignore them.
   x <- suppressWarnings(
     assertive.strings:::strip_invalid_chars(x, invalid_chars="[ -()]")
@@ -127,6 +128,7 @@ is_us_telephone_number <- function(x)
 #' @export
 is_us_zip_code <- function(x)
 {
+  x <- coerce_to(x, "character", get_name_in_parent(x))
   prefix <- setdiff(
     0:999,
     c(
