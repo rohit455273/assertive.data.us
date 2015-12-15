@@ -1,5 +1,6 @@
 [![Project Status: Active - The project has reached a stable, usable state and is being actively developed.](http://www.repostatus.org/badges/0.1.0/active.svg)](http://www.repostatus.org/#active)
 [![Is the package on CRAN?](http://www.r-pkg.org/badges/version/assertive.data.us)](http://www.r-pkg.org/pkg/assertive.data.us)
+[![Build Status](https://semaphoreci.com/api/v1/projects/536880e1-f50c-40ac-b021-7e81aa55afab/635106/badge.svg)](https://semaphoreci.com/richierocks/assertive-data-us)
 
 # assertive.data.us
 
