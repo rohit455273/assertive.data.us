@@ -2,7 +2,7 @@ Package: assertive.data.us
 Type: Package
 Title: Assertions to Check Properties of Strings
 Version: 0.0-2
-Date: 2016-05-08
+Date: 2018-10-21
 Author: Richard Cotton [aut, cre]
 Maintainer: Richard Cotton <richierocks@gmail.com>
 Authors@R: person("Richard", "Cotton", role = c("aut", "cre"), email =
@@ -19,8 +19,7 @@ Imports:
     assertive.base (>= 0.0-2),
     assertive.strings
 Suggests:
-    testthat,
-    devtools
+    testthat
 License: GPL (>= 3)
 LazyLoad: yes
 LazyData: yes
@@ -33,4 +32,4 @@ Collate:
     'imports.R'
     'assert-is-data-us.R'
     'is-data-us.R'
-RoxygenNote: 5.0.1
+RoxygenNote: 6.1.0
